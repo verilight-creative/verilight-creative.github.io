@@ -40,7 +40,45 @@
   }
 }
 </style>
-</head><body>
+
+<style>
+/* Partner portraits: square; bio text uses original stylesheet sizing */
+#about .member-photo{
+  width:100%;
+  aspect-ratio:1 / 1 !important;
+  height:auto !important;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+}
+</style>
+
+<style>
+/* Service text: restore original stylesheet sizing; compact mobile layout */
+@media(max-width:600px){
+  #services .services-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  #services .service:last-child{grid-column:1 / -1;}
+  #services .service{padding-top:28px;padding-bottom:28px;}
+}
+</style>
+<style>
+.hero-kicker{font-size:11px;font-weight:600;letter-spacing:.20em;color:#9f4f2e;margin-bottom:22px}
+@media(max-width:620px){.hero-kicker{font-size:10px;margin-bottom:18px}}
+</style><style>
+.hero-brand-line{
+  display:flex;
+  width:72px;
+  height:3px;
+  margin:-8px 0 28px;
+  background:linear-gradient(90deg,#26352F 0 56%,#C86F45 56% 100%);
+}
+@media(max-width:620px){
+  .hero-brand-line{width:58px;margin:-6px 0 22px}
+}
+</style></head><body>
 <nav><div class="wrap nav">
 <a class="brand" href="index.html"><svg viewBox="0 0 100 100" fill="none" aria-label="VeriLight Creative logo">
 <circle cx="76" cy="14" r="7" stroke="currentColor" stroke-width="4"/>
@@ -48,7 +86,7 @@
 </svg><span class="brand-text"><strong>實光創意</strong><span>VERILIGHT CREATIVE</span></span></a>
 <div class="links"><a href="works.html">WORK</a><a href="index.html#about">ABOUT</a><a href="index.html#services">SERVICES</a><a href="index.html#contact">CONTACT</a></div>
 </div></nav>
-<header class="hero"><div class="hero-copy"><h1>讓創意成為光，<br>讓品牌被看見。</h1><p>實光創意是一個以影像製作與品牌內容為核心的創意團隊，從行銷切角出發，整合企劃、拍攝、後製與社群內容，為品牌創造有感的影響力。</p><a class="arrow-link" href="works.html">VIEW OUR WORK</a></div><div class="hero-visual"></div></header>
+<header class="hero"><div class="hero-copy"><div class="hero-kicker">VERILIGHT CREATIVE</div><div class="hero-brand-line" aria-hidden="true"></div><h1>讓創意成為光，<br>點亮品牌價值。</h1><p>從企劃發想、影像製作到內容整合，我們將品牌想說的話轉化為有感的內容，讓創意被看見，讓品牌留下影響力。</p><a class="arrow-link" href="works.html">VIEW OUR WORK</a></div><div class="hero-visual"></div></header>
 <section id="work"><div class="wrap works-layout"><div class="works-head"><h2>SELECTED<br>WORKS</h2><a class="arrow-link" href="works.html">VIEW ALL WORKS</a></div>
 <div class="work-grid">
 <a class="work-card" href="case-jinda.html"><div class="thumb"></div><h3>晶達光電｜形象影片</h3><p>Brand Film</p></a>

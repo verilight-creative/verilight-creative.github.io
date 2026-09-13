@@ -1,0 +1,16 @@
+VeriLight Creative V8 — 深綠 × 棕橘正式配色版
+
+主架構與原本 HTML 排版不變，所有文字仍可直接修改。
+
+色彩：
+- 深墨綠 #26352F
+- 次深綠 #34483F
+- 棕橘 #C86F45
+- 米白與黑色沿用原網站
+
+調整：
+- Section label、Works hover、Filter、Partner role 使用深綠
+- Icon、細線、箭頭、CTA hover 使用棕橘
+- Hero 新增可編輯 CSS 品牌雙色色條
+- 保留原本字級強化與說明文字可讀性
+- 不把文字烙進圖片，不破壞原網站結構

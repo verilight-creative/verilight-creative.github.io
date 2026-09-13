@@ -1,0 +1,14 @@
+VeriLight Creative V7 Design Refinement
+
+調整重點：
+- 保留黑／白／米色主視覺
+- 新增暖陶橘 accent：#C96F45
+- 放大 Services、Partner、Works、Footer 等說明文字
+- Section label 加品牌色細線
+- Services 增加層級與品牌色 icon
+- Works / filters / hover 加強設計感
+- About 夥伴介紹提高可讀性
+- CTA 與 Footer 導入少量 accent
+- 手機版同步調整字級與間距
+
+此版未更改既有主要文案與網站架構。

@@ -15,9 +15,9 @@ nav{position:sticky;top:0;z-index:50;background:rgba(243,239,231,.94);backdrop-f
 .hero-copy h1,.page-title,.case-title{font-family:"Noto Serif TC","Songti TC",serif;font-weight:500;letter-spacing:.02em}
 .hero-copy h1{font-size:clamp(48px,6vw,90px);line-height:1.2;margin:0 0 28px}
 .hero-copy p{max-width:560px;font-size:17px;line-height:1.9;color:#5f5a53;margin:0 0 38px}
-.hero-visual{background:linear-gradient(rgba(15,15,13,.18),rgba(15,15,13,.18)),radial-gradient(circle at 30% 35%,rgba(255,255,255,.5),transparent 24%),linear-gradient(135deg,#d9d5cd 0%,#928d84 42%,#1b1a18 100%);position:relative;overflow:hidden}
-.hero-visual:before{content:"";position:absolute;left:18%;bottom:0;width:48%;height:64%;background:#171715;border-radius:44% 44% 0 0;opacity:.96}
-.hero-visual:after{content:"";position:absolute;left:2%;bottom:17%;width:48%;height:18%;border:12px solid #181816;border-right-width:32px;transform:rotate(-8deg)}
+.hero-visual{background-image:url("hero-verilight.png");background-size:cover;background-position:center center;background-repeat:no-repeat;position:relative;overflow:hidden}
+.hero-visual:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(243,239,231,.12) 0%,rgba(17,17,15,0) 30%);pointer-events:none}
+.hero-visual:after{display:none}
 .arrow-link{font-size:12px;letter-spacing:.16em;display:inline-flex;align-items:center;gap:22px}.arrow-link:after{content:"→";font-size:20px}
 section{padding:96px 0;border-bottom:1px solid var(--line)}.section-title{font-size:13px;letter-spacing:.15em;margin-bottom:30px}
 .works-layout{display:grid;grid-template-columns:170px 1fr;gap:28px}.works-head{display:flex;flex-direction:column;justify-content:space-between;min-height:360px}
@@ -55,3 +55,345 @@ footer{background:#11110f;color:#f2eee5;padding:58px 0 34px}.footer-grid{display
 .footer-col h4{font-size:9px;letter-spacing:.14em;margin:0 0 16px;color:#a9a39a}.footer-col a,.footer-col p{display:block;font-size:11px;line-height:1.85;color:#e0dbd1;margin:0}.copyright{margin-top:48px;font-size:9px;color:#777168}
 @media(max-width:980px){.hero{grid-template-columns:1fr}.hero-visual{min-height:460px}.works-layout,.services-wrap,.team-layout{grid-template-columns:1fr}.works-head{min-height:auto;gap:28px}.work-grid{grid-template-columns:repeat(2,1fr)}.services-grid{grid-template-columns:repeat(2,1fr);gap:24px}.service{border-left:0;border-top:1px solid var(--line);padding:18px 0}.team-grid{grid-template-columns:repeat(2,1fr)}.portfolio-grid{grid-template-columns:repeat(2,1fr)}.case-meta{grid-template-columns:1fr;gap:30px}.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.wrap{padding:0 20px}.links{gap:14px}.links a:nth-child(3){display:none}.hero-copy{padding:72px 20px}.work-grid,.team-grid,.services-grid,.portfolio-grid,.gallery{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.next-project{display:block}.next-project a{margin-top:26px}}
+
+@media(max-width:980px){.hero-visual{background-position:62% center}}
+@media(max-width:620px){.hero-visual{min-height:360px;background-position:68% center}}
+
+
+/* ===== VeriLight visual refinement v7 ===== */
+:root{
+  --accent:#c96f45;           /* warm terracotta / light-inspired orange */
+  --accent-soft:#ead2c4;
+  --accent-ink:#9f4f2e;
+}
+
+/* clearer typography */
+body{font-size:16px}
+.section-title{
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.17em;
+  color:var(--accent-ink);
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.section-title:before{
+  content:"";
+  width:22px;
+  height:1px;
+  background:var(--accent);
+  flex:0 0 auto;
+}
+
+.hero-copy p{
+  font-size:18px;
+  line-height:1.9;
+  color:#514c45;
+}
+.arrow-link{
+  font-size:12px;
+  font-weight:600;
+}
+.arrow-link:after{color:var(--accent)}
+.links a{
+  position:relative;
+  padding:7px 0;
+}
+.links a:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:0;
+  height:1px;
+  background:var(--accent);
+  transition:right .22s ease;
+}
+.links a:hover:after{right:0}
+
+/* stronger but minimal section rhythm */
+section{padding-top:108px;padding-bottom:108px}
+.works-head h2,
+.services-intro h2,
+.team-intro h2{
+  letter-spacing:-.01em;
+}
+.services-intro h2,
+.team-intro h2{font-size:36px}
+
+/* work cards */
+.work-card .thumb,
+.portfolio-card .thumb{
+  border-radius:2px;
+}
+.work-card h3,.portfolio-card h3{
+  font-size:17px;
+  line-height:1.45;
+  font-weight:600;
+  margin-top:3px;
+}
+.work-card p,.portfolio-card p{
+  font-size:13px;
+  line-height:1.6;
+  color:#706960;
+}
+.work-card:hover h3,.portfolio-card:hover h3{color:var(--accent-ink)}
+
+/* service area: increase explanation size and add visual hierarchy */
+.service{
+  padding:4px 22px 4px 22px;
+  position:relative;
+}
+.service:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-1px;
+  width:1px;
+  height:34px;
+  background:var(--accent);
+}
+.service:first-child:before{display:none}
+.icon{
+  font-size:27px;
+  color:var(--accent);
+  margin-bottom:20px;
+}
+.service h3{
+  font-size:19px;
+  line-height:1.4;
+  margin-bottom:7px;
+}
+.service small{
+  font-size:10px;
+  line-height:1.5;
+  letter-spacing:.13em;
+  color:#8a6554;
+  margin-bottom:17px;
+}
+.service p{
+  font-size:14px;
+  line-height:1.85;
+  color:#5f5952;
+}
+
+/* partners: easier to read without becoming bulky */
+.member h3{
+  font-size:16px;
+  line-height:1.4;
+  font-weight:600;
+}
+.member .role{
+  font-size:11px;
+  line-height:1.5;
+  letter-spacing:.06em;
+  color:var(--accent-ink);
+  margin-top:3px;
+  margin-bottom:12px;
+}
+.member p{
+  font-size:13.5px;
+  line-height:1.85;
+  color:#625c54;
+}
+.member-photo{
+  position:relative;
+  overflow:hidden;
+}
+.member-photo:after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:38px;
+  height:3px;
+  background:var(--accent);
+}
+
+/* works page labels */
+.badge{
+  font-size:10.5px;
+  font-weight:600;
+  letter-spacing:.14em;
+  color:var(--accent-ink);
+}
+.page-intro{
+  font-size:18px;
+  line-height:1.9;
+}
+.filter{
+  font-size:11px;
+  font-weight:600;
+  transition:.2s ease;
+}
+.filter.active,.filter:hover{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+}
+
+/* case study readability */
+.case-meta p{font-size:19px}
+.meta-row{font-size:13px}
+.story p{font-size:20px;line-height:1.95}
+
+/* CTA: keep black but weave in brand accent */
+.contact-cta{
+  background:#10100f !important;
+}
+.contact-cta .section-title{color:#d49a7b !important}
+.contact-button{
+  border-color:#9b6d56 !important;
+  font-size:12px !important;
+}
+.contact-button:hover{
+  background:var(--accent) !important;
+  border-color:var(--accent) !important;
+  color:#fff !important;
+}
+
+/* Footer text was especially small */
+.footer-col h4{
+  font-size:10px;
+  letter-spacing:.16em;
+  color:#c79073;
+}
+.footer-col a,.footer-col p{
+  font-size:12.5px;
+  line-height:1.9;
+}
+.footer-brand span{font-size:10px}
+.copyright{font-size:10px}
+
+/* subtle selection color */
+::selection{background:var(--accent-soft);color:var(--black)}
+
+@media(max-width:980px){
+  section{padding-top:82px;padding-bottom:82px}
+  .service:before{display:none}
+  .service{
+    padding:24px 0 !important;
+    border-top:1px solid var(--line);
+  }
+  .services-intro h2,.team-intro h2{font-size:34px}
+  .member p{font-size:13.5px}
+}
+
+@media(max-width:620px){
+  body{font-size:15px}
+  .hero-copy p{font-size:16px;line-height:1.85}
+  section{padding-top:68px;padding-bottom:68px}
+  .section-title{font-size:11px;margin-bottom:24px}
+  .services-intro h2,.team-intro h2{font-size:30px}
+  .service h3{font-size:18px}
+  .service small{font-size:10px}
+  .service p{font-size:13.5px;line-height:1.8}
+  .member h3{font-size:16px}
+  .member p{font-size:13.5px;line-height:1.8}
+  .work-card h3,.portfolio-card h3{font-size:16px}
+  .work-card p,.portfolio-card p{font-size:12.5px}
+  .page-intro{font-size:16px}
+  .footer-col a,.footer-col p{font-size:12.5px}
+}
+
+
+/* ===== VeriLight V8 brand palette refinement ===== */
+:root{
+  --brand-green:#26352F;
+  --brand-green-2:#34483F;
+  --brand-green-soft:#A9B0A8;
+  --brand-orange:#C86F45;
+  --brand-orange-dark:#9E4F31;
+  --brand-orange-soft:#E8C8B5;
+}
+
+/* keep black / white / cream as main structure, use green + orange as accents */
+.section-title{
+  color:var(--brand-green) !important;
+}
+.section-title:before{
+  background:var(--brand-orange) !important;
+}
+
+.hero-kicker{
+  color:var(--brand-orange-dark) !important;
+}
+.arrow-link:after{
+  color:var(--brand-orange) !important;
+}
+
+.links a:after{
+  background:var(--brand-green) !important;
+}
+
+/* service hierarchy */
+.icon{
+  color:var(--brand-orange) !important;
+}
+.service small{
+  color:var(--brand-green-2) !important;
+}
+.service:before{
+  background:var(--brand-orange) !important;
+}
+
+/* work cards */
+.work-card:hover h3,
+.portfolio-card:hover h3{
+  color:var(--brand-green) !important;
+}
+.badge{
+  color:var(--brand-green) !important;
+}
+.filter.active,
+.filter:hover{
+  background:var(--brand-green) !important;
+  border-color:var(--brand-green) !important;
+  color:#fff !important;
+}
+
+/* team */
+.member .role{
+  color:var(--brand-green) !important;
+}
+.member-photo:after{
+  background:var(--brand-orange) !important;
+}
+
+/* CTA / footer */
+.contact-cta .section-title{
+  color:var(--brand-orange-soft) !important;
+}
+.contact-button{
+  border-color:#7D8A84 !important;
+}
+.contact-button:hover{
+  background:var(--brand-orange) !important;
+  border-color:var(--brand-orange) !important;
+  color:#fff !important;
+}
+.footer-col h4{
+  color:#D1A087 !important;
+}
+
+/* subtle design accents */
+::selection{
+  background:var(--brand-orange-soft) !important;
+  color:var(--brand-green) !important;
+}
+
+@media (hover:hover){
+  .work-card .thumb,
+  .portfolio-card .thumb,
+  .member-photo{
+    transition:transform .28s ease, box-shadow .28s ease;
+  }
+  .work-card:hover .thumb,
+  .portfolio-card:hover .thumb{
+    box-shadow:0 10px 26px rgba(38,53,47,.10);
+  }
+  .member:hover .member-photo{
+    transform:translateY(-3px);
+  }
+}
